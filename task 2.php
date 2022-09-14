@@ -9,22 +9,23 @@ Sample Input : 3
 echo '<br>';
 echo "Qustion 1";
 echo '<br>';
-function primeNumber($number){
-    if ($number == 1)
+function primeNumber($n){
+    if ($n == 1)
     return 0;
-    for ($i = 2; $i <= $number/2; $i++){
-        if ($number % $i == 0)
+    for ($i = 2; $i <= $n/2; $i++){
+        if ($n % $i == 0)
             return 0;
     }
     return 1;
 }
 
-$number = 3;
-$flag = primeNumber($number);
+$n = 3;
+$n = 25;
+$flag = primeNumber($n);
 if ($flag == 1)
-    echo $number," is a prime number ";
+    echo $n," is a prime number ";
 else
-    echo $number," is not a prime number ";
+    echo $n," is not a prime number ";
 
 echo '<br>';
 echo '<br>';
@@ -45,8 +46,8 @@ echo '<br>';
 function reverse($str){
     return strrev($str);
 }
-$str = "remove";
-echo reverse($str);
+
+echo reverse("remove");
 
 echo '<br>';
 echo '<br>';
@@ -62,7 +63,7 @@ echo "Qustion 3";
 echo '<br>';
 
 
-function string_lowercase($str1)
+function string_lower($str1)
    {
     for ($sc = 0; $sc < strlen($str1); $sc++) {
 	      if (ord($str1[$sc]) >= ord('A') &&
@@ -72,7 +73,10 @@ function string_lowercase($str1)
          }
          return "Your String is Ok" ;
     }
-    var_dump (string_lowercase("remove"));
+    var_dump (string_lower("remove"));
+    echo '<br>';
+    var_dump (string_lower("Hello"));
+    
 
     echo '<br>';
     echo '<br>';
@@ -129,12 +133,12 @@ function armstrongCheck($number){
     return 0;   
 }
 $number = 407;
-$flag = armstrongCheck($number);
+ armstrongCheck($number);
 if ($flag == 1){
-    echo "407 is Armstrong Number";
+    echo  $number," is Armstrong Number";
 }   
 else{
-    echo "407 is not Armstrong Number";
+    echo  " is not Armstrong Number";
 }
     
 
@@ -158,10 +162,10 @@ function check_palindrome($string)
 {
     
   if ($string == strrev($string)){
-    return "No it is not a palindrome";
+    return "Yes it is a palindrome";
   } 
   else{
-    return "Yes it is a palindrome " ;
+    return " No it is not a palindrome " ;
   }
 	  
 }
@@ -199,6 +203,7 @@ Sample Output This year is not a leap year
 echo '<br>';
 echo '<br>';
 echo "Logical Statements and Operators";
+echo '<br>';
 echo "Qustion 1 ";
 echo '<br>';
 echo '<br>';
@@ -230,8 +235,8 @@ echo "Qustion 2";
 echo '<br>';
 echo '<br>';
 
-function season(){
-    $temperatureb = 27 ;
+function season($temperatureb){
+    
     if ($temperatureb < 20 ){
         echo "it is winter time  ! ";
     }
@@ -239,8 +244,12 @@ function season(){
         echo "it is summertime ! ";
     }
 }
-season();
+season(27);
 
+echo '<br>';
+season("18");
+
+echo '<br>';
 echo '<br>';
 echo '<br>';
 
@@ -422,47 +431,9 @@ function electricity ($unit){
 }
 electricity (40);
 echo '<br>';
-electricity (60);
+electricity (150);
 echo '<br>';
 echo '<br>';
-
-/*
-9.Write php script to make a calculator , the calculator should contain
- the four main operation
- e. Addition 
- f. Subtraction 
- g . Multiplication 
- h . Division
-*/
-
-echo '<br>';
-echo '<br>';
-echo "Qustion 9";
-echo '<br>';
-
-
-function calculator(){
-    $first_number = $_POST['first_number'];
-    $second_number = $_POST['second_number'];
-    $operator = $_POST['operator'];
-    $result = '';
-    if (is_numeric($first_number) && is_numeric($second_number)) {
-        switch ($operator) {
-            case "Add":
-                $result = $first_number + $second_number;
-                break;
-            case "Subtract":
-                $result = $first_number - $second_number;
-                break;
-            case "Multiply":
-                $result = $first_number * $second_number;
-                break;
-            case "Divide":
-                $result = $first_number / $second_number;
-            }
-        }
-    }
-
 
 
 /*
@@ -575,3 +546,74 @@ sumArray();
 echo '<br>';
 echo '<br>';
 
+?>
+
+
+<!-- 
+<!DOCTYPE html>
+
+<head>
+	<title>Simple Calculator Program in PHP - Tutorials Class</title>
+</head>
+
+<?php
+
+/*
+9.Write php script to make a calculator , the calculator should contain
+ the four main operation
+ e. Addition 
+ f. Subtraction 
+ g . Multiplication 
+ h . Division
+*/
+/*
+echo '<br>';
+echo '<br>';
+echo "Qustion 9";
+echo '<br>';
+
+$first_num = $_POST['first_num'];
+$second_num = $_POST['second_num'];
+$operator = $_POST['operator'];
+$result = '';
+if (is_numeric($first_num) && is_numeric($second_num)) {
+    switch ($operator) {
+        case "Add":
+           $result = $first_num + $second_num;
+            break;
+        case "Subtract":
+           $result = $first_num - $second_num;
+            break;
+        case "Multiply":
+            $result = $first_num * $second_num;
+            break;
+        case "Divide":
+            $result = $first_num / $second_num;
+    }
+}
+
+?>
+
+<body>
+    <div id="page-wrap">
+
+	  <form action="" method="post" id="quiz-form">
+            <p>
+                <input type="number" name="first_num" id="first_num" required="required" value="<?php echo $first_num; ?>" /> <b>First Number</b>
+            </p>
+            <p>
+                <input type="number" name="second_num" id="second_num" required="required" value="<?php echo $second_num; ?>" /> <b>Second Number</b>
+            </p>
+            <p>
+                <input readonly="readonly" name="result" value="<?php echo $result; ?>"> <b>Result</b>
+            </p>
+            <input type="submit" name="operator" value="Add" />
+            <input type="submit" name="operator" value="Subtract" />
+            <input type="submit" name="operator" value="Multiply" />
+            <input type="submit" name="operator" value="Divide" />
+	  </form>
+    </div>
+</body>
+</html>
+
+ -->

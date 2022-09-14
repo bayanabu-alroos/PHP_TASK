@@ -17,6 +17,16 @@ echo ucfirst("i love money .");
 echo '<br>';
 
 /*
+2. Write a PHP script splitting the following numeric string to be a date format . 
+Sample Output : ' 085119 ' 
+Expected Output : 08:51:19
+*/
+echo '<br>';
+$date = date_create_from_format('dmy', "110922");
+echo date_format($date, 'Y:m:d');
+echo '<br>';
+echo '<br>';
+/*
 Write a PHP script to check whether the sentence contains a specific word . 
 Sample Output : ' I am a full stack developer at orange coding academy ' 
 Sample Word : ' Orange ' 
@@ -32,7 +42,8 @@ if(strpos($mystring, $word) !== false){
     echo "Word Not Found!";
 }
 
-
+echo '<br>';
+echo '<br>';
 /*
 Write a PHP script to extract the file name from the URL . 
 Sample Output : ' www.orange.com/index.php ' 
@@ -45,6 +56,8 @@ $path = parse_url($url, PHP_URL_PATH);
 // extracted basename
 echo '<br>';
 echo basename($path);
+echo '<br>';
+echo '<br>';
 echo '<br>';
 
 /*
@@ -61,6 +74,8 @@ echo '<br>';
   // Display the username
   echo $username."\n";
   echo '<br>';
+  echo '<br>';
+  echo '<br>';
 
 /*
 6. Write a PHP script to get the last three characters from the string .
@@ -71,6 +86,8 @@ echo '<br>';
 
 $str1 = 'info@orange.com';
 echo substr($str1, -3)."\n";
+echo '<br>';
+echo '<br>';
 
 /*
 7. Write a PHP script to generate simple random passwords [ do not use rand function ] from given string
@@ -78,7 +95,7 @@ echo substr($str1, -3)."\n";
  Expected Output : 254ABCc or h242sfeDAFEe32 - > random number
 */
 
-echo '<br>';
+
 function password_generate($chars) 
 {
   $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
@@ -89,6 +106,8 @@ echo password_generate(7)."\n";
 
 
   echo '<br>';
+  echo '<br>';
+
 
 
   /*solution 2*/
@@ -104,16 +123,20 @@ function getName($n) {
     return $randomString;
 }
 echo getName($n);
+echo '<br>';
+echo '<br>';
 
 /*
-8. Write a PHP script to replace the first word of the sentence with another word . Sample Output : ' That new trainee is so genius . '
+8. Write a PHP script to replace the first word of the sentence with another word . 
+Sample Output : ' That new trainee is so genius . '
  Sample Word : ' Our ' 
  Expected Result : the new trainee is so genius .
 */
-echo '<br>';
-$str = 'Our';
-echo preg_replace('/Our/', 'the new trainee is so genius .', $str, 1)."\n"; 
 
+$str = ' That new trainee is so genius .';
+echo preg_replace('/That/', 'the ', $str, 1)."\n"; 
+echo '<br>';
+echo '<br>';
 /*
 9. Write a PHP script to find the first character that is different between two strings . 
 String1 ' dragonball ' 
@@ -130,6 +153,8 @@ printf(
     $pos, $string1[$pos], $string2[$pos]
 );
 printf("\n");
+echo '<br>';
+echo '<br>';
 
 /*
 10. Write a PHP script to put a string in an array , use the ( var_dump ) to view the array . 
@@ -169,7 +194,8 @@ if (strlen($next_cha) > 1)
  $next_cha = $next_cha[0];
  }
 echo $next_cha."\n";
-
+echo '<br>';
+echo '<br>';
 
 /*12. Write a PHP script to insert a string at the specified position in a given string . 
 Original String : ' The brown fox '
@@ -179,18 +205,20 @@ Expected Output : ' The quick brown fox '
 Original String : ' The quick brown fox ' 
 Expected Output : ' The ' 
 */
-echo '<br>';
+
 $original_string = ' The brown fox '  ;
 $string_to_insert =' quick ';
 $insert_pos = 4;
 $new_string = substr_replace($original_string, $string_to_insert.' ', $insert_pos, 0);
 echo $new_string."\n";
 
-echo '<br>';
+
 $s = 'The quick brown fox';
 $arr1 = explode(' ',trim($s));
 echo $arr1[0]."\n";
 echo '<br>';
+echo '<br>';
+
 
 
 /*
@@ -203,6 +231,8 @@ $x = '0000657022.24';
 $str1 = ltrim($x, '0');
 echo $str1."\n";
 echo '<br>';
+echo '<br>';
+echo '<br>';
 
 /*
 14. Write a PHP script to remove part of a string . 
@@ -213,6 +243,8 @@ Expected Output : ' The quick brown jumps over the lazy dog '
 
 $my_str = 'The quick brown fox jumps over the lazy dog';
 echo str_replace("fox", " ", $my_str)."\n";
+echo '<br>';
+echo '<br>';
 
 /*
 15. Write a PHP script to remove trailing dashes from a string . 
@@ -223,6 +255,8 @@ Expected Output : ' The quick brown fox jumps over the lazy dog '
 echo '<br>';
 $my_str = 'The quick brown fox jumps over the lazy dog---';
 echo rtrim($my_str, '-')."\n";
+echo '<br>';
+echo '<br>';
 
 /*
 16. Write a PHP script to remove Special characters from the following string . 
@@ -232,6 +266,8 @@ Expected Output : ' 1 2 3 2 2 3 43 '
 echo '<br>';
 $my_str = '\"\1+2/3*2:2-3/4*3';
 echo str_replace(str_split('\\/:*?"<>|+-'), ' ', $my_str)."\n";
+echo '<br>';
+echo '<br>';
 
 
 /*
@@ -242,6 +278,8 @@ Expected Output : 'The quick brown fox jumps'
 echo '<br>';
 $my_string = 'The quick brown fox jumps over the lazy dog';
 echo implode(' ', array_slice(explode(' ', $my_string), 0, 5))."\n";
+echo '<br>';
+echo '<br>';
 
 
 /*
@@ -256,7 +294,8 @@ if( is_numeric($x))
   {
   echo $x."\n";
   }
-
+  echo '<br>';
+  echo '<br>';
   /*
  19. Write a PHP script to print letters from 'a' to 'z'. 
 Expected Result : abcdefghijklmnopqrstuvwxyz
@@ -266,8 +305,15 @@ Expected Result : abcdefghijklmnopqrstuvwxyz
   foreach (range('a', 'z') as $alphabet) {
     echo $alphabet." ";
 }
+echo '<br>';
+echo '<br>';
 
 echo '<br>';
 foreach (range('A', 'Z') as $alphabet) {
   echo $alphabet." ";
 }
+
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo '<br>';
