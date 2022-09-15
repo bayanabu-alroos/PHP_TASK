@@ -126,10 +126,9 @@ echo "Qustion 5";
 echo '<br>';
 echo '<br>';
 
-$x = array('1 ',' 2 ',' 3 ',' 4 ',' 5'); 
-
+$x = array('1 ',' 2 ',' 3 ',' 4 ',' 5');
 $y = '$';
-array_splice($x, 3,0,$y);
+array_splice($x,3,0,$y);
 foreach($x as $z){
     echo "$z";
 }
@@ -165,7 +164,6 @@ asort($fruits);
 foreach ($fruits as $key => $value) {
     echo "$key = $value <br>";
 }
-
 
 echo '<br>';
 echo '<br>';
@@ -415,7 +413,7 @@ echo '<br>';
 echo "Qustion 12";
 echo '<br>';
 echo '<br>';
-$words =  array("abcd","abc","de","hjjj","g","wer");
+$words =  array("abcd ","abc ","de ","hjjj " ,"g","wer");
 $new_array = array_map('strlen', $words);
 echo "The shortest array length is " .min($new_array).".
  The longest array length is" .max($new_array).'.';
@@ -423,6 +421,46 @@ echo "The shortest array length is " .min($new_array).".
 echo '<br>';
 echo '<br>';
 echo "-------------------------------------------------";
+
+echo '<br>';
+
+echo '<br>';
+echo '<br>';
+echo "Qustion 12";
+echo '<br>';
+echo '<br>';
+$lenlong =0;
+$long=[];
+$short = [];
+$words =  array("abcd ","abc ","de ","hjjj " ,"g","wer");
+$lenshort = (strlen($words[0]));
+foreach ($words as $element){
+  $currentlength = strlen($element);
+  if ($currentlength > $lenlong){
+    $long =[$element];
+    $lenlong = $currentlength ;
+  }
+  else if ($currentlength == $lenlong){
+    $long[] =$element;
+  }
+  if ($currentlength < $lenshort){
+    $lenshort = $currentlength;
+    $short = [$element];
+  }
+}
+
+echo '<br>';
+print_r($long);
+echo '<br>';
+echo '<br>';
+print_r($short);
+echo '<br>';
+echo '<br>';
+echo '<br>';
+echo "-------------------------------------------------";
+
+echo '<br>';
+
 
 
 /*
@@ -496,7 +534,7 @@ for ($z = 1 ; $z <= 10 ; $z++){
         echo "$z-";
     }
     else{
-        echo "$z"."\n";
+        echo "$z";
     }
 }
 
@@ -604,6 +642,31 @@ echo '<br>';
 echo '<br>';
 echo "-------------------------------------------------";
 
+echo '<br>';
+echo '<br>';
+echo "Qustion 3";
+echo '<br>';
+echo '<br>';
+
+function nestedAlphabet()
+{
+
+    for ($i = 0; $i < 5; $i++) {
+        for ($j = 4; $j >= 0; $j--) {
+            if ($j <= $i) {
+                echo  chr(ord('A') + $i) . " ";
+            } else {
+                echo "A" . " ";
+            }
+        }
+        echo "<br>";
+    }
+}
+nestedAlphabet();
+echo '<br>';
+echo '<br>';
+echo "-------------------------------------------------";
+
 
 /*
 4. Create a script to generate the following pattern , using the nested for loop .
@@ -678,6 +741,33 @@ for ($x = 0; $x <= 5; $x++) {
 echo '<br>';
 echo '<br>';
 echo "-------------------------------------------------";
+
+echo '<br>';
+echo '<br>';
+echo "Qustion 4";
+echo '<br>';
+echo '<br>';
+
+function nestedNum()
+{
+
+    for ($i = 0; $i < 5; $i++) {
+        for ($j = 4; $j >= 0; $j--) {
+            if ($j <= $i) {
+                echo  1 + $i . " ";
+            } else {
+                echo "1" . " ";
+            }
+        }
+        echo "<br>";
+    }
+}
+nestedNum();
+
+echo '<br>';
+echo '<br>';
+echo "-------------------------------------------------";
+
 
 
 /*
@@ -1094,3 +1184,6 @@ for ($j=1 ; $j <= 6 ; $j++){
     echo '<br>';
     echo '<br>';
 }
+echo "</table>";
+echo '<br>';
+echo '<br>';
