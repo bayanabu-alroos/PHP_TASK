@@ -110,13 +110,13 @@ $phones = [
 <br>
 <br>
 
-<div class='container'>
-<div class="row row-cols-md-3">
+<div class='container-fluid'>
+<div class="row row-cols-md-3 m-2">
 <?php
 
 for( $i=0; $i <count($phones); $i++){
     ?>
-<div class="card col-3   mt-2">
+<div class="card col-3  ">
   <img src="<?php echo $phones[$i]['img_url']?>" class="card-img-top" alt="...">
   <div class="card-body">
     <p class="card-title"><?php echo $phones[$i]['brand']?></p>
