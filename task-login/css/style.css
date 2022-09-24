@@ -1,0 +1,146 @@
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+
+}
+
+
+body{
+   background: rgb(244, 191, 191);
+   color: #000;
+}
+.errorColor {
+   color: red;
+   float: left;
+}
+.container{
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+   padding-bottom: 60px;
+   
+}
+
+.container .content{
+   text-align: center;
+   
+}
+
+.container .content h3{
+   font-size: 30px;
+   color:rgb(51, 51, 51);
+}
+
+.container .content h3 span{
+   background: #a1b8f3;
+   color:#fff;
+   border-radius: 5px;
+   padding:0 15px;
+}
+
+.container .content h1{
+   font-size: 50px;
+   color:#333;
+}
+
+.container .content h1 span{
+   color:#a1b8f3;
+}
+
+.container .content p{
+   font-size: 25px;
+   margin-bottom: 20px;
+}
+
+.container .content .btn{
+   display: inline-block;
+   padding:10px 30px;
+   font-size: 20px;
+   background: black;
+   color:#fff;
+   margin:0 5px;
+   text-transform: capitalize;
+}
+
+.container .content .btn:hover{
+   background: rgb(130, 115, 225);
+}
+
+.form-container{
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+   padding-bottom: 60px;
+   background: rgb(244, 191, 191);
+}
+
+.form-container form{
+   padding:20px;
+   border-radius: 5px;
+   box-shadow: 0 5px 10px rgba(0,0,0,.1);
+   background: #f09494;
+   text-align: center;
+   width: 500px;
+}
+
+.form-container form h3{
+   font-size: 30px;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+   color:#333;
+}
+
+.form-container form input,
+.form-container form select{
+   width: 100%;
+   padding:10px 15px;
+   font-size: 17px;
+   margin:8px 0;
+   background: rgb(218, 180, 180);
+   border-radius: 5px;
+}
+
+.form-container form select option{
+   background: rgb(225, 204, 204);
+}
+
+.form-container form .form-btn{
+   background: #a1b8f3;
+   color:black;
+   text-transform: capitalize;
+   font-size: 20px;
+   cursor: pointer;
+}
+
+.form-container form .form-btn:hover{
+   background: #a1b8f3;
+   color:rgb(3, 3, 3);
+}
+
+.form-container form p{
+   margin-top: 10px;
+   font-size: 20px;
+   color:#333;
+}
+
+.form-container form p a{
+   color:#a1b8f3;
+}
+
+.form-container form .error-msg{
+   margin:10px 0;
+   display: block;
+   background: #a1b8f3;
+   color:rgb(0, 0, 0);
+   border-radius: 5px;
+   font-size: 20px;
+   padding:10px;
+}
