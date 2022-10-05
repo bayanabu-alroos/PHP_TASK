@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
    $pass = $_POST['password'];
    $cpass = $_POST['cpassword'];
    $birthday=$_POST['birthday'];
-   $user_type = $_POST['user_type'];
+
    
   
    
@@ -184,10 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <input type="password" name="cpassword"  placeholder="confirm your password">
       <span class="error" style="float:left;"> <?php echo $passwordErr; ?> </span> 
       <input type="date" id="birthday" name="birthday">
-      <select name="user_type">
-         <option value="user">user</option>
-         <option value="admin">admin</option>
-      </select>
+      
       <input type="submit" name="submit" value="Sign up" class="form-btn">
       <p>Already have an account? <a href="login_form.php">login</a></p>
    </form>

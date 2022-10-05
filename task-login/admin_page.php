@@ -156,6 +156,7 @@ session_start();
                         <th scope="col"> Birthday </th>
                         <th scope="col">E-mail </th>
                         <th scope="col">Password</th>
+                        <th scope="col">Type user</th>
                         <th scope="col"> EDIT </th>
                         <th scope="col"> DELETE </th>
                      </tr>
